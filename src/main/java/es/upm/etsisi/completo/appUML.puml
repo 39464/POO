@@ -1,0 +1,19 @@
+@startuml
+class Platform{
+- name: String
+- creationDate: Date
+}
+
+class Song{
+- id: String
+- title: String
+- artist: String
+- length: int
+}
+
+class Playlist{
+- title: String
+}
+
+Playlist "0..*"o--"0..*" Song
+@enduml

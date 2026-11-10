@@ -1,0 +1,17 @@
+@startuml
+
+class Person{
+    - name: String
+    - age: Integer
+
+    + getName(): String
+    + setName(newName:String): void
+}
+
+class Book{
+    - title: String
+}
+
+Person "0..*"0--"1" Book
+
+@enduml
