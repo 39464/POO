@@ -1,19 +1,34 @@
 @startuml
 class Platform{
+- instance: Singleton
 - name: String
 - creationDate: Date
+
+- - Platform()
+- + getInstance(): Platform
+}
+
+class Audio{
+- id: String
+- title: String
+- length: int
 }
 
 class Song{
-- id: String
-- title: String
 - artist: String
-- length: int
+}
+
+class Podcast{
+- host: String
+- numEps : int
 }
 
 class Playlist{
 - title: String
 }
 
-Playlist "0..*"o--"0..*" Song
+Playlist "0..*"o-->"0..*" Song : contains
+Platform "1"*-->"0..*" Song : catalog
+Platform "1"*-->"0..*" Playlist : manages
+Song --> Audio
 @enduml

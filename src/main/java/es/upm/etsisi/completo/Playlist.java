@@ -4,20 +4,20 @@ import java.util.ArrayList;
 
 public class Playlist {
     private String title;
-    private ArrayList<Song> songs;
+    private ArrayList<Audio> audios;
 
     public Playlist(String title) {
         this.title = title;
-        this.songs = new ArrayList<>();
+        this.audios = new ArrayList<>();
     }
 
-    public boolean addSong(Song song){
-        if(!songs.contains(song)) songs.add(song);
-        return !songs.contains(song);
+    public boolean addAudio(Audio audio){ //relación de agregación, por lo que no se tiene que crear el objeto
+        if(!audios.contains(audio)) audios.add(audio);
+        return !audios.contains(audio);
     }
 
-    public boolean removeSong(Song song){
-        if(songs.contains(song)) songs.remove(song);
-        return songs.contains(song);
+    public boolean removeSong(Audio audio){
+        if(audios.contains(audio)) audios.remove(audio);
+        return audios.contains(audio);
     }
 }
